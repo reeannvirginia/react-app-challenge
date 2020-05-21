@@ -24,8 +24,8 @@ If the email and password do not match the signup credentials, you will not be a
 
 ### Styling
 
-- The app uses both global styles for animations and scss modules to avoid conflicting classnames and co-locating styles.
-- React Transition Group is used to track the component's mounting and unmounting status for more granular css animations
+- The app uses both global styles for animations and scss modules to avoid conflicting classnames and benefit from co-location.
+- React Transition Group is used to track the component's mounting and unmounting status for more granular css animations.
 - There are small style discrepancies from the mock to help showcase some of my animation skills. In a professional scenario I would consult the PMs or designers beforehand.
 
 ### Routing
@@ -35,7 +35,7 @@ If the email and password do not match the signup credentials, you will not be a
 
 ### React Concepts
 
-- The app makes use of hooks the following hooks:
+- The app makes use of the following hooks:
   - useState
   - useEffect
   - useMemo
