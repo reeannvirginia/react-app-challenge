@@ -14,7 +14,7 @@ const SignIn = ({ handleSignIn, handleInput, toggleForm, loading }: SignInProps)
     <div className={classes.signInCard}>
       <form onSubmit={handleSignIn}>
         <h4>
-          Welcome back! <br /> Please sign in{' '}
+          Welcome! <br /> Please sign in{' '}
         </h4>
         <Input id="signIn" placeholder="email" required onChange={handleInput} />
         <Input id="signIn" placeholder="password" type="password" required minLength={8} onChange={handleInput} />
