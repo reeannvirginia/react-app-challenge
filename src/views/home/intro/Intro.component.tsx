@@ -8,9 +8,7 @@ import classes from './Intro.module.scss';
 const Intro = (props: { loading: boolean }) => {
   const [value, setValue] = useState(1000);
 
-  useEffect(() => {
-    setValue(2019);
-  }, []);
+  useEffect(() => void setValue(2019), []);
 
   return (
     <div className={classNames(classes.contentContainer, { [classes.welcome]: !props.loading })}>

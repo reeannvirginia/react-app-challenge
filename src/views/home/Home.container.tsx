@@ -19,9 +19,7 @@ const HomeContainer = () => {
       const shippingDates = await resp.json();
       setDates(shippingDates);
     };
-    const timeout = setTimeout(() => {
-      setState(false);
-    }, 3000);
+    const timeout = setTimeout(() => setState(false), 3000);
     fetchDates();
     return () => clearTimeout(timeout);
   }, []);

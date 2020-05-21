@@ -22,9 +22,8 @@ const PublicApp = () => {
 const ProtectedApp = () => {
   return (
     <>
-      <Route key="home" path={'/home'} component={Homepage} />
-      <Route key="redirect" path={'/'} exact render={() => <Redirect to={'/home'} />} />
-      <Redirect to={'/'} />
+      <Route path={'/home'} component={Homepage} />
+      <Route path={'/'} render={() => <Redirect to={'/home'} />} />
     </>
   );
 };

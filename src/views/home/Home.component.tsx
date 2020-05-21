@@ -16,8 +16,8 @@ type HomeProps = {
 };
 
 const Home = ({ loading, dates }: HomeProps) => {
-  const match = useRouteMatch();
-  const location = useLocation();
+  const [match, location] = [useRouteMatch(), useLocation()];
+
   return (
     <CSSTransition classNames="scaleBack" appear in={loading} timeout={{ appear: 500, enter: 100, exit: 100 }}>
       <div className={classes.homeContainer}>
