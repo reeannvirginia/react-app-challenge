@@ -6,7 +6,7 @@ import { formatDate } from '../../../utils/helper';
 import classes from './Devices.module.scss';
 
 const IPhone = (props: { date: string }) => {
-  // useMemo to avoid recalculating date on re-renders
+  // useMemo to avoid recalculating date on re-renders unless props.date changes
   const shipDate = useMemo(() => formatDate(props.date), [props.date]);
   const [position, setPosition] = useState(0);
 

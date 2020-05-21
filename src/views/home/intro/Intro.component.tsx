@@ -11,6 +11,7 @@ const Intro = (props: { loading: boolean }) => {
   useEffect(() => {
     setValue(2019);
   }, []);
+
   return (
     <div className={classNames(classes.contentContainer, { [classes.welcome]: !props.loading })}>
       <div className={classes.backgroundLogo}></div>

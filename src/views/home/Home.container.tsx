@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
 import { datesEndpoint } from '../../utils/constants';
 import Home from './Home.component';
 
@@ -10,20 +9,21 @@ type ShipDates = {
 };
 
 const HomeContainer = () => {
-  const { pathname } = useLocation();
-  const [loading, setState] = useState(pathname === '/home');
+  const [loading, setState] = useState(true);
   const [dates, setDates] = useState<ShipDates | null>(null);
 
+  // setTimeout for transition from Coming Products to Homepage
   useEffect(() => {
     const fetchDates = async () => {
       const resp = await fetch(datesEndpoint);
       const shippingDates = await resp.json();
       setDates(shippingDates);
     };
-    fetchDates();
-    setTimeout(() => {
+    const timeout = setTimeout(() => {
       setState(false);
     }, 3000);
+    fetchDates();
+    return () => clearTimeout(timeout);
   }, []);
 
   return <Home dates={dates} loading={loading} />;
