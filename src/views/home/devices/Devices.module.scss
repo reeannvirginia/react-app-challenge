@@ -1,0 +1,299 @@
+@import '../../../assets//styles/variables';
+
+.deviceContainer {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  position: absolute;
+  top: 100px;
+  right: 0;
+  height: calc(100% - 100px);
+  width: calc(100% - 100px);
+  overflow: hidden;
+  & > div {
+    flex: 1 1 30%;
+    max-width: 50%;
+    box-sizing: border-box;
+  }
+  @media screen and (max-width: $medium) {
+    height: 100%;
+    width: 100%;
+    flex-wrap: nowrap;
+    overflow: auto;
+    & > div {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      max-width: 100%;
+      padding: 10%;
+      text-align: center;
+    }
+    & .logo {
+      right: 0;
+      left: 0;
+      margin: auto;
+      top: 0;
+      bottom: 0;
+    }
+  }
+}
+// top left corner
+.deviceBanner {
+  padding: 9vh;
+  position: relative;
+  background: $whiteGradient;
+  width: 100%;
+  min-height: 55vh;
+  max-height: calc(65vh - 100px);
+}
+.title {
+  color: $red;
+  z-index: 1;
+  position: relative;
+}
+.header {
+  z-index: 11;
+  position: relative;
+}
+.logo {
+  position: absolute;
+  width: 166px;
+  right: 0;
+  bottom: 50%;
+}
+.caption {
+  position: relative;
+  z-index: 1;
+  color: $medGrey;
+}
+.shipDate {
+  color: $red;
+  font-size: 14px;
+  position: relative;
+  z-index: 1;
+}
+
+// bottom left corner
+.priceDetails {
+  padding: 100px;
+  width: 100%;
+  max-height: 33%;
+}
+.price {
+  color: $medGrey;
+}
+.buyNow {
+  color: red;
+}
+
+// right frame
+.devicePreview {
+  display: flex;
+  align-items: center;
+  padding: 48px;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  @media screen and (max-width: $medium) {
+    min-height: 60vh;
+    position: relative;
+    & .iphoneWrapper {
+      width: 100%;
+    }
+  }
+}
+.iphoneWrapper {
+  display: flex;
+  position: relative;
+  width: calc(100% - 100px);
+  height: 100%;
+}
+.phoneImage {
+  position: absolute;
+  max-width: 100%;
+  align-self: center;
+  right: 0;
+  max-height: 550px;
+  @media screen and (max-width: $medium) {
+    height: inherit;
+    left: 0;
+    margin: auto;
+  }
+}
+
+// thumbnail scroll
+.thumbnailPreview {
+  position: absolute;
+  bottom: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  width: fit-content;
+  @media screen and (max-width: $medium) {
+    overflow: unset;
+    bottom: 0;
+    & .thumbnails {
+      display: none;
+    }
+  }
+}
+.thumbnails {
+  display: flex;
+  justify-content: space-between;
+  width: 250px;
+  & img {
+    cursor: pointer;
+    margin-bottom: 16px;
+    max-width: 100%;
+  }
+}
+.scrollbar {
+  width: 200px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+.slider {
+  overflow: auto;
+  display: flex;
+  scroll-snap-type: x mandatory;
+  &::-webkit-scrollbar {
+    height: 9px;
+  }
+  &::-webkit-scrollbar-track {
+    background: $silver;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: $red;
+  }
+}
+.slide {
+  height: 14px;
+  scroll-snap-align: start;
+  flex-shrink: 0;
+  width: 200px;
+}
+
+// watch styles
+.watchPreview {
+  display: flex;
+  align-items: center;
+  padding: 48px;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  @media screen and (max-width: $medium) {
+    min-height: 80vh;
+    position: relative;
+    & .device {
+      width: 100%;
+    }
+  }
+  @media screen and (max-width: $small) {
+    min-height: 60vh;
+  }
+}
+.device {
+  display: flex;
+  width: calc(100% - 100px);
+  height: 100%;
+}
+.watchWrapper {
+  display: flex;
+  height: 100%;
+  position: relative;
+}
+.watchImage {
+  max-width: 80%;
+  margin: auto;
+}
+.radioBtns {
+  display: flex;
+  bottom: 5%;
+  width: 150px;
+  justify-content: space-between;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  @media screen and (max-width: $medium) {
+    bottom: 0;
+  }
+}
+.radio {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 4px;
+  position: relative;
+  cursor: pointer;
+  opacity: 1;
+  & label {
+    margin-top: 16px;
+    color: $darkGrey;
+  }
+}
+.check {
+  border: 1px solid $lightGrey;
+  border-radius: 100%;
+  height: 45px;
+  width: 45px;
+}
+.circle {
+  height: 30px;
+  width: 30px;
+  box-sizing: border-box;
+  border-radius: 100%;
+  top: 7px;
+  left: 7px;
+  position: relative;
+  border: 1px solid $darkGrey;
+  background: $white;
+  transition: background 0.5s;
+  &:hover {
+    background: $lightGrey;
+  }
+}
+.selected {
+  & .check {
+    border: 1px solid $red;
+  }
+  & .circle {
+    background: $black;
+  }
+}
+
+// macbook pro styles
+.macBookContainer {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  position: absolute;
+  top: 100px;
+  right: 0;
+  height: calc(100% - 100px);
+  width: calc(100% - 100px);
+  @media screen and (max-width: $medium) {
+    height: 100%;
+    width: 100%;
+  }
+}
+.macBookFeature {
+  background: black url('../../../assets/images/macbook.png') no-repeat left;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  padding: 80px;
+  text-align: center;
+  box-sizing: border-box;
+  & h4 {
+    color: $blue;
+  }
+  & h1 {
+    color: $white;
+  }
+}

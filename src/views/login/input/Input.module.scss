@@ -1,0 +1,48 @@
+@import '../../../assets/styles/variables';
+
+.inputContainer {
+  height: 54px;
+  background: $white;
+  width: 100%;
+  display: flex;
+  padding: 0px 16px;
+  box-sizing: border-box;
+  position: relative;
+  border: 1px solid $darkGrey;
+}
+.inputField {
+  height: calc(100% - 10px);
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  align-self: center;
+  border: unset;
+  outline: unset;
+  font-size: 15px;
+  color: $darkGrey;
+  caret-color: $blue;
+  transition: border-bottom 0.25s;
+  &:-webkit-autofill-selected {
+    background: transparent;
+  }
+}
+.placeholder {
+  text-transform: capitalize;
+  position: absolute;
+  transition: all 0.3s ease-out;
+  top: 14px;
+  background: $white;
+  color: $lightGrey;
+  font-size: 14px;
+  padding: 4px;
+}
+
+.isFocused {
+  border: 2px solid $blue;
+  & label {
+    transform: translate(-10px, -28px);
+    font-size: 0.8em;
+    color: $blue;
+  }
+}

@@ -1,0 +1,214 @@
+// animations used with react-transition-group
+
+// signup form animation
+.slide-appear {
+  opacity: 0;
+  transform: translateY(1000px);
+}
+.slide-enter {
+  opacity: 0;
+}
+.slide-enter-done {
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+  opacity: 1;
+  transition: transform 1000ms, opacity 1000ms;
+}
+.slide-exit-done {
+  transform: translateY(1000px);
+  opacity: 0;
+  transition: transform 1000ms, opacity 1000ms;
+}
+
+// homepage animation
+.scaleBack-appear {
+  & [class*='navBar'] {
+    top: -100px;
+  }
+  & h2 {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  & [class*='backgroundLogo'] {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+  & [class*='introMesg'] {
+    opacity: 0;
+    transform: scale(1.2);
+  }
+  & [class*='contentContainer'] {
+    height: 100%;
+    width: 100%;
+  }
+  & [class*='odometer'] {
+    opacity: 0;
+  }
+}
+.scaleBack-enter-done {
+  & h2 {
+    opacity: 1;
+    transform: translateY(0px);
+    transition: all 2s;
+  }
+  & [class*='navBar'] {
+    top: 0;
+    transition: top 2s;
+  }
+  & [class*='contentContainer'] {
+    width: calc(100% - 205px);
+    transition: all 2s;
+  }
+  & [class*='backgroundLogo'] {
+    opacity: 1;
+    transform: scale(1);
+    transition: all 2s;
+  }
+  & [class*='introMesg'] {
+    transform: scale(1);
+    opacity: 1;
+    transition: all 2s;
+  }
+  & [class*='odometer'] {
+    opacity: 1;
+    transition: opacity 2s;
+  }
+}
+.scaleBack-exit {
+  & h2 {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  & [class*='backgroundLogo'] {
+    opacity: 0.3;
+  }
+  & [class*='productsMesg'] {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  & [class*='navIcons'] {
+    opacity: 0;
+    transform: scale(1.5);
+  }
+  & [class*='introMesg'] {
+    transform: scale(1);
+    opacity: 1;
+  }
+  & [class*='welcomeMesg'] {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+}
+.scaleBack-exit-done {
+  & [class*='contentContainer']:before {
+    opacity: 1;
+  }
+  & h2 {
+    opacity: 1;
+    transform: translateY(0px);
+    transition: all 1s;
+  }
+  & [class*='backgroundLogo'] {
+    opacity: 1;
+  }
+  & [class*='logoBar'] {
+    width: 100px;
+    transition: width 2s ease-out;
+  }
+  & [class*='productsMesg'] {
+    opacity: 1;
+    transform: translateY(-50px);
+    transition: all 2s;
+  }
+  & [class*='introMesg'] {
+    transform: scale(1.1);
+    opacity: 0;
+    transition: all 1.5s ease-in;
+  }
+  & [class*='navIcons'] {
+    opacity: 1;
+    transform: scale(1);
+    transition: all 2s;
+  }
+  & [class*='welcomeMesg'] {
+    opacity: 1;
+    transform: translateY(0px);
+    transition: all 2s ease-in;
+  }
+}
+
+// page transitions
+.newPage-exit {
+  z-index: 1;
+}
+.newPage-enter {
+  z-index: 10;
+}
+.newPage-enter {
+  transform: translate3d(100%, 0, 0);
+}
+.newPage-enter-done {
+  transform: translate3d(0%, 0, 0);
+  transition: all 0.6s ease-out;
+}
+.newPage-exit {
+  transform: translate3d(0%, 0, 0);
+}
+.newPage-exit-active {
+  transform: translate3d(-200%, 0, 0);
+  transition: all 0.6s ease-in;
+}
+.newPage-exit-done {
+  transform: translate3d(-200%, 0, 0);
+}
+
+// device banner transitions
+.newDevice-appear {
+  & [class*='title'] {
+    opacity: 0.3;
+    transform: translateX(-130px);
+  }
+  & [class*='header'] {
+    opacity: 0.3;
+    transform: translateX(130px);
+  }
+  & [class*='priceDetails'] {
+    opacity: 0.4;
+    transform: translateY(130px);
+  }
+  & [class*='iphoneWrapper'] {
+    opacity: 0.4;
+    transform: translateX(230px);
+  }
+  & [class*='watchWrapper'] {
+    opacity: 0.4;
+    transform: translateX(230px);
+  }
+}
+.newDevice-enter-done {
+  & [class*='title'] {
+    opacity: 1;
+    transform: translateX(0px);
+    transition: all 1s ease-out;
+  }
+  & [class*='header'] {
+    opacity: 1;
+    transform: translateX(0px);
+    transition: all 1s ease-out;
+  }
+  & [class*='priceDetails'] {
+    opacity: 1;
+    transform: translateY(-1px);
+    transition: all 1s ease-out;
+  }
+  & [class*='iphoneWrapper'] {
+    opacity: 1;
+    transform: translateX(0px);
+    transition: all 1s ease-out;
+  }
+  & [class*='watchWrapper'] {
+    opacity: 1;
+    transform: translateX(0px);
+    transition: all 1s ease-out;
+  }
+}

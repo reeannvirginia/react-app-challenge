@@ -1,26 +1,23 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter } from 'react-router-dom';
+import { ContextProvider } from './UserContext';
+import AppRoutes from './routes/Routes';
+import './assets/styles/App.scss';
 
-function App() {
+// the app uses context to handle the state of authentication in addition to storing
+// the user's credentials in a session
+
+// the session persists if they close their tab with sessionStorage
+// and we are insecurely "registering" a user via localStorage
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ContextProvider>
+      <BrowserRouter>
+        <AppRoutes />
+      </BrowserRouter>
+    </ContextProvider>
   );
-}
+};
 
 export default App;

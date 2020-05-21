@@ -1,0 +1,12 @@
+export { default as iphone } from './iphone.svg';
+export { default as watch } from './watch.svg';
+export { default as macbook } from './macbook.svg';
+export { default as logoWhite } from './logo_white.svg';
+export { default as logoGrey } from './logo_grey.svg';
+export { default as iphoneFrontLarge } from './iphone_front_large.png';
+export { default as iphoneFrontSmall } from './iphone_front_small.png';
+export { default as iphoneBackLarge } from './iphone_back_large.png';
+export { default as iphoneBackSmall } from './iphone_back_small.png';
+export { default as watchBlack } from './watch_black.png';
+export { default as watchWhite } from './watch_white.png';
+export { default as macbookPro } from './macbook.png';

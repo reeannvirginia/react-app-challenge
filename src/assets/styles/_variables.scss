@@ -1,0 +1,27 @@
+// accents
+$boxShadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.2);
+$blue: #5ac8fa;
+$red: #ff3b30;
+
+// neutrals
+$white: #ffffff;
+$black: #000000;
+$silver: #f2f2f2;
+$lightGrey: #cccccc;
+$medGrey: #999999;
+$darkGrey: #707070;
+
+// background
+$blueGradient: linear-gradient(#5ac8fa 0, #ffffff 80%);
+$greyGradient: linear-gradient(to right, $silver 0%, rgba(253, 253, 253, 1) 100%);
+$whiteGradient: linear-gradient(to right, $silver 0%, #fff 100%);
+
+// font weight
+$regular: 400;
+$medium: 500;
+$semiBold: 600;
+$bold: 700;
+
+// screen size
+$small: 400px;
+$medium: 1023px;

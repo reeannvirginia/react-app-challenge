@@ -1,0 +1,41 @@
+@import '../../../assets//styles/variables';
+
+.navContainer {
+  position: relative;
+  margin-right: 100px;
+  .navItems {
+    & a {
+      color: $black;
+      opacity: 0.6;
+      margin-right: 48px;
+      transition: opacity 0.3s;
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+}
+.navIcons {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  & a {
+    transition: transform 0.4s;
+    &:hover {
+      transform: scale(1.3);
+    }
+  }
+}
+.verticalNav {
+  flex-direction: column;
+  height: 170px;
+  margin-left: auto;
+  width: auto;
+  @media screen and (max-width: $medium) {
+    display: none;
+    flex-direction: row;
+    width: 170px;
+    margin: auto;
+  }
+}

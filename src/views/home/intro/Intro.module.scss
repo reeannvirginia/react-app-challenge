@@ -1,0 +1,101 @@
+@import '../../../assets/styles/variables';
+
+.contentContainer {
+  background: $blueGradient;
+  position: absolute;
+  display: flex;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  justify-content: center;
+  align-items: center;
+  width: calc(100% - 205px);
+  &:before {
+    content: '';
+    position: absolute;
+    background: $greyGradient;
+    opacity: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 50;
+    transition: opacity 2s;
+    @media screen and (max-width: $medium) {
+      background: unset;
+    }
+  }
+  @media screen and (max-width: $medium) {
+    background: unset;
+    & .backgroundLogo {
+      background: url('../../../assets/images/logo_grey.svg') no-repeat center;
+      background-size: contain;
+    }
+  }
+}
+.welcome {
+  & .products {
+    visibility: visible;
+  }
+  & .welcomeMesg {
+    visibility: visible;
+  }
+  & .odometer {
+    visibility: hidden;
+  }
+  & .backgroundLogo {
+    background: url('../../../assets/images/logo_grey.svg') no-repeat center;
+    background-size: contain;
+  }
+}
+.backgroundLogo {
+  z-index: 100;
+  width: 300px;
+  min-height: 300px;
+  background: url('../../../assets/images/logo_white.svg') no-repeat center;
+  background-size: contain;
+  position: absolute;
+  & img {
+    width: 300px;
+    height: auto;
+  }
+}
+.introMesg {
+  position: absolute;
+  z-index: 150;
+  font-size: 1.5em;
+  text-align: center;
+}
+.welcomeMesg {
+  font-weight: $medium;
+  font-size: 4em;
+  font-weight: bold;
+  text-align: center;
+  z-index: 150;
+  position: absolute;
+  visibility: hidden;
+}
+.products {
+  display: flex;
+  position: absolute;
+  color: $blue;
+  flex-direction: column;
+  align-items: center;
+  z-index: 100;
+  width: 200px;
+  bottom: 0;
+  margin-bottom: 6em;
+  visibility: hidden;
+  & .productsMesg {
+    font-size: 20px;
+    margin-block-end: 4em;
+  }
+}
+.odometer {
+  z-index: 100;
+  font-size: 62px;
+  font-weight: $bold;
+  letter-spacing: 0.5em;
+  margin: auto 0px 150px 35px;
+  white-space: nowrap;
+}
